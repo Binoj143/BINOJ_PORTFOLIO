@@ -48,7 +48,7 @@ export default function Hero() {
       id="home" 
       className="relative min-h-screen w-full bg-[#070709] text-white flex items-center justify-center px-6 sm:px-12 lg:px-20 overflow-hidden select-none"
     >
-      {/* Massive Centered Turnaround Hero Element */}
+      {/* Centered Turnaround Hero Element */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
         <div className="relative w-full h-[85vh] max-w-5xl flex items-center justify-center">
           <img
@@ -79,7 +79,7 @@ export default function Hero() {
         <div className="max-w-xs md:text-right flex flex-col md:items-end gap-6 drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
           <div>
             <span className="font-mono text-[11px] tracking-widest text-zinc-400 uppercase block mb-1">
-              // EXPERTISE SCOPE / SPECIALTY
+              {'//'} EXPERTISE SCOPE / SPECIALTY
             </span>
             <p className="text-xs sm:text-sm font-mono text-zinc-300 leading-relaxed">
               Available for Full-stack Systems, scalable cloud backends, and responsive modern web architectures.
