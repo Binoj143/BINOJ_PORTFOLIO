@@ -1,0 +1,225 @@
+/* Work.css — refactored for dark theme and consistent card style */
+#work {
+  padding: 1.8rem 1.8rem 2rem;
+  color: var(--text, #e6eef8);
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+}
+
+#work h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 1.1rem;
+  color: var(--heading);
+  font-family: 'Space Grotesk', 'Inter', 'Helvetica Neue', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+[data-theme="light"] #work h2 {
+  color: #0f172a;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+#work h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 0.6rem auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent-1, #56ccf2), var(--accent-2, #9b59b6));
+}
+
+[data-theme="light"] #work h2::after {
+  background: linear-gradient(90deg, #0891b2, #0284c7);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.85rem;
+  padding: 0;
+  list-style: none;
+}
+
+.work-grid li {
+  background: linear-gradient(135deg, rgba(6,182,212,0.12), rgba(59,130,246,0.08));
+  border-left: 4px solid #00d4ff;
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,212,255,0.15), inset 0 1px 0 rgba(255,255,255,0.08);
+  transition: all 0.3s ease;
+  transform: none;
+  backdrop-filter: blur(12px);
+}
+
+.work-grid li::before {
+  content: '< /';
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: rgba(0,212,255,0.3);
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.work-grid li::after {
+  content: '>';
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: rgba(0,212,255,0.3);
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+[data-theme="light"] .work-grid li {
+  background: linear-gradient(135deg, rgba(240,249,255,0.7), rgba(224,242,254,0.5));
+  border-left-color: #0891b2;
+  box-shadow: 0 8px 32px rgba(8,145,178,0.15), inset 0 1px 0 rgba(255,255,255,0.5);
+  backdrop-filter: blur(12px);
+}
+
+.work-grid li:hover {
+  transform: translateX(8px) translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,212,255,0.25), inset 0 1px 0 rgba(255,255,255,0.15);
+  border-left-color: #00f5ff;
+  background: linear-gradient(135deg, rgba(6,182,212,0.2), rgba(59,130,246,0.12));
+}
+
+.work-grid h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--heading);
+  font-weight: 600;
+}
+
+[data-theme="light"] .work-grid h3 {
+  color: #0f172a;
+}
+
+.work-grid p {
+  color: var(--text);
+  margin: 0.6rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+[data-theme="light"] .work-grid p {
+  color: #475569;
+  opacity: 1;
+}
+
+.work-grid .tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.4rem 0.6rem;
+}
+
+.work-grid .tags span {
+  background: rgba(0,217,255,0.1);
+  color: var(--accent-1);
+  border: 1px solid rgba(0,217,255,0.2);
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+[data-theme="light"] .work-grid .tags span {
+  background: rgba(8,145,178,0.1);
+  color: #0891b2;
+  border-color: rgba(8,145,178,0.3);
+}
+
+.work-grid a.project-cta {
+  display: inline-block;
+  margin: 0.6rem;
+  padding: 0.55rem 1rem;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2), var(--accent-3));
+  color: #0a0e27;
+  border-radius: 9px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+[data-theme="light"] .work-grid a.project-cta {
+  background: linear-gradient(135deg, #0891b2, #0284c7);
+  color: white;
+  box-shadow: 0 4px 12px rgba(8,145,178,0.25);
+}
+
+.work-grid a.project-cta:focus-visible { outline: 3px solid rgba(0,217,255,0.25); outline-offset: 4px; }
+
+.work-grid a.project-cta:hover {
+  box-shadow: 0 8px 25px rgba(0,217,255,0.35);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #work {
+    padding: 1.5rem 1.2rem 2rem;
+  }
+  
+  #work h2 {
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    margin-bottom: 1.2rem;
+  }
+  
+  .works {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .works-item {
+    padding: 1rem;
+  }
+  
+  .works-item h3 {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+  }
+  
+  .works-item p {
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  }
+}
+
+@media (max-width: 420px) {
+  #work {
+    padding: 1.2rem 0.8rem 1.5rem;
+  }
+  
+  #work h2 {
+    font-size: clamp(1.6rem, 4vw, 2rem);
+  }
+  
+  .works {
+    gap: 0.8rem;
+  }
+  
+  .works-item {
+    padding: 0.8rem;
+  }
+}
+
+/* Entrance animations with reduced-motion support */
+@keyframes workFade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.work-grid li { animation: workFade 0.6s ease forwards; opacity: 0; }
+.work-grid li:nth-child(1) { animation-delay: 0.06s; }
+.work-grid li:nth-child(2) { animation-delay: 0.12s; }
+.work-grid li:nth-child(3) { animation-delay: 0.18s; }
+
+@media (prefers-reduced-motion: reduce) { .work-grid li { animation: none; transition: none; } }

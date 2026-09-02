@@ -1,0 +1,155 @@
+/* Footer.css — Modern Glassmorphism with Gradient Accents */
+footer {
+  background: linear-gradient(135deg, rgba(13,17,23,0.7), rgba(22,33,62,0.6));
+  backdrop-filter: blur(20px) saturate(130%);
+  color: var(--muted);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  position: relative;
+  margin-top: 0.8rem;
+  border-top: 2px solid rgba(0,217,255,0.2);
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -20px 60px rgba(0,217,255,0.1), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+[data-theme="light"] footer {
+  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(240,249,255,0.8));
+  border-top-color: rgba(8,145,178,0.3);
+  box-shadow: 0 -15px 40px rgba(8,145,178,0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,217,255,0.5), transparent);
+  border-radius: 24px 24px 0 0;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.7; width: 180px; }
+  50% { opacity: 1; width: 220px; }
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+footer p { 
+  margin: 0; 
+  font-size: 0.95rem; 
+  letter-spacing: 0.35px;
+  font-weight: 500;
+  animation: fadeInUp 0.8s ease-out;
+  color: rgba(139,150,161,0.95);
+}
+
+[data-theme="light"] footer p {
+  color: #64748b;
+  font-weight: 500;
+}
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 768px) { footer { padding: 1.1rem 1rem; margin-top: 1.6rem; } footer p { font-size: 0.88rem; } }
+
+.visit-count { 
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem); 
+  color: #00f5ff;
+  font-weight: 700;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards, badgePulse 2.5s ease-in-out infinite;
+  background: rgba(0,245,255,0.08);
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,245,255,0.3);
+  display: inline-block;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(0,245,255,0.2);
+  text-shadow: 0 0 8px rgba(0,245,255,0.3);
+  white-space: nowrap;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(0,245,255,0.35), inset 0 1px 0 rgba(255,255,255,0.2); transform: scale(1); }
+  50% { box-shadow: 0 0 50px rgba(0,245,255,0.6), inset 0 1px 0 rgba(255,255,255,0.25); transform: scale(1.05); }
+}
+
+[data-theme="light"] .visit-count {
+  color: #0891b2;
+  background: rgba(8,145,178,0.08);
+  border-color: rgba(8,145,178,0.3);
+  box-shadow: 0 0 15px rgba(8,145,178,0.15);
+  text-shadow: 0 0 6px rgba(8,145,178,0.2);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, rgba(0,217,255,0.12), rgba(124,58,237,0.08));
+  border-radius: 12px;
+  color: #00f5ff;
+  transition: all 0.4s cubic-bezier(.2,.9,.3,1);
+  border: 1.5px solid rgba(0,217,255,0.3);
+  font-size: 1.2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,217,255,0.15), inset 0 1px 0 rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.social-links a:hover::before {
+  left: 100%;
+}
+
+[data-theme="light"] .social-links a {
+  background: linear-gradient(135deg, rgba(8,145,178,0.1), rgba(124,58,237,0.08));
+  color: #0891b2;
+  border-color: rgba(8,145,178,0.3);
+  box-shadow: 0 4px 15px rgba(8,145,178,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.social-links a:hover {
+  transform: translateY(-8px) scale(1.1);
+  background: linear-gradient(135deg, #00f5ff, #8b5cf6);
+  color: #000;
+  border-color: transparent;
+  box-shadow: 0 15px 50px rgba(0,245,255,0.5), 0 0 40px rgba(124,58,237,0.3);
+}
+
+[data-theme="light"] .social-links a:hover {
+  background: linear-gradient(135deg, #0891b2, #7c3aed);
+  color: #fff;
+  box-shadow: 0 15px 40px rgba(8,145,178,0.35), 0 0 30px rgba(124,58,237,0.25);
+}
