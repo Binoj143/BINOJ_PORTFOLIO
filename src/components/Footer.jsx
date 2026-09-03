@@ -12,6 +12,7 @@ export default function Footer() {
         <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-6 font-mono text-xs text-zinc-500 border-t border-zinc-900 pt-8 items-center text-center sm:text-left">
           <div>
             <span className="block text-zinc-400 font-semibold">// Systems Architecture</span>
+            <span>{'//'} SYSTEM_STATUS</span>
             Full-Stack Web Engineering
           </div>
 
@@ -32,7 +33,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <span>// SYSTEM_STATUS</span>
+      
     </footer>
   );
 }
