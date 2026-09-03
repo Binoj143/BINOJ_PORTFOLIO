@@ -17,12 +17,14 @@ const TECH_CATEGORIES = [
 
 export default function Skill() {
   return (
-// At the top of Skill.jsx:
-// In src/components/Skill.jsx, update the opening <section> tag:
-<section 
-  id="expertise" 
-  className="relative w-full bg-[#070709] text-white pt-2 pb-6 px-5 sm:px-12 lg:px-20 select-none scroll-mt-24 z-10"
->    <div className="max-w-4xl mx-auto text-center mb-8">
+    <section 
+      id="expertise" 
+      className="relative w-full bg-[#070709] text-white pt-6 pb-6 px-5 sm:px-12 lg:px-20 select-none scroll-mt-28"
+    >
+      {/* Invisible hard anchor target */}
+      <span id="expertise-anchor" className="absolute -top-24 left-0 pointer-events-none opacity-0" />
+
+      <div className="max-w-4xl mx-auto text-center mb-8">
         <span className="font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-zinc-400 block mb-2">
           {'//'} TECHNICAL STACK
         </span>
@@ -60,7 +62,6 @@ export default function Skill() {
           </div>
         ))}
       </div>
-
     </section>
   );
 }
