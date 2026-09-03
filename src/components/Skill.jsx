@@ -19,7 +19,7 @@ export default function Skill() {
   return (
     <section 
       id="skills" 
-      className="relative w-full bg-[#070709] text-white pt-12 pb-16 px-5 sm:px-12 lg:px-20 select-none scroll-mt-24 block"
+      className="relative w-full bg-[#070709] text-white pt-12 pb-16 px-5 sm:px-12 lg:px-20 select-none scroll-mt-40 block"
     >
       <div className="max-w-4xl mx-auto text-center mb-10">
         <span className="font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-zinc-400 block mb-2">
