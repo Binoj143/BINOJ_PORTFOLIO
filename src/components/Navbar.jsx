@@ -15,42 +15,35 @@ export default function Navbar() {
     e.preventDefault();
     
     const element = document.getElementById(id);
+    
     if (!element) {
-      console.warn(`Element with id "${id}" not found`);
+      console.error(`Section with id="${id}" not found`);
       return;
     }
 
-    const navbarHeight = 120;
-    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-    const offsetPosition = elementPosition - navbarHeight;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
-
-    setActiveSection(id);
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'skills', 'work', 'contact'];
-      const scrollPosition = window.scrollY + 150;
-
+      
+      let currentSection = 'home';
+      
       for (const section of sections) {
         const element = document.getElementById(section);
-        if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
+        if (!element) continue;
+        
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= 200) {
+          currentSection = section;
         }
       }
+      
+      setActiveSection(currentSection);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
