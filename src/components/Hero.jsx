@@ -46,9 +46,9 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen w-full bg-[#070709] text-white flex flex-col justify-between pt-24 sm:pt-28 pb-10 px-6 sm:px-12 lg:px-20 select-none overflow-hidden"
+      className="relative min-h-[100svh] w-full bg-[#070709] text-white flex flex-col justify-between pt-20 sm:pt-28 pb-8 px-4 sm:px-12 lg:px-20 select-none overflow-hidden"
     >
-      {/* Desktop Centered Layer: hidden on mobile to avoid overlapping */}
+      {/* Desktop Background Layer */}
       <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none z-0">
         <div className="relative w-full h-[85vh] max-w-5xl flex items-center justify-center">
           <img
@@ -62,12 +62,12 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Main Responsive Grid / Stack */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-6 my-auto">
+      {/* Main Content Viewport */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 my-auto">
         
         {/* Top / Left Column: Heading */}
         <div className="w-full md:max-w-md text-center md:text-left">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-zinc-400 block mb-2 sm:mb-3">
+          <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.3em] text-zinc-400 block mb-1.5 sm:mb-3">
             HI, I'M BINOJ
           </span>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.95] uppercase">
@@ -75,13 +75,13 @@ export default function Hero() {
           </h1>
         </div>
 
-        {/* Mobile Turnaround Centerpiece: visible only on small screens */}
-        <div className="md:hidden w-full flex items-center justify-center py-2">
-          <div className="relative w-64 h-72 sm:w-80 sm:h-88 flex items-center justify-center">
+        {/* Mobile Turnaround Centerpiece: Substantially enlarged */}
+        <div className="md:hidden w-full flex items-center justify-center -my-2">
+          <div className="relative w-full max-w-xs sm:max-w-sm h-[48vh] flex items-center justify-center overflow-hidden">
             <img
               src="/images/me.gif"
               alt="Binoj 360 Turnaround"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain scale-125"
               onError={(e) => {
                 e.target.src = "/images/my.png";
               }}
@@ -89,8 +89,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Bottom / Right Column: Specs & Actions */}
-        <div className="w-full md:max-w-xs flex flex-col items-center md:items-end text-center md:text-right gap-5">
+        {/* Bottom / Right Column: Specialty & Actions */}
+        <div className="w-full md:max-w-xs flex flex-col items-center md:items-end text-center md:text-right gap-4 sm:gap-5">
           <div>
             <span className="font-mono text-[10px] sm:text-[11px] tracking-widest text-zinc-400 uppercase block mb-1">
               {'//'} EXPERTISE SCOPE / SPECIALTY
