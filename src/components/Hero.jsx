@@ -65,29 +65,29 @@ export default function Hero() {
       {/* Main Structural Flow */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-1 sm:gap-6">
         
-        {/* Top: Name & Animated Role */}
+        {/* Top: Larger Name & Animated Headline */}
         <div className="w-full md:max-w-md text-center md:text-left flex-shrink-0 z-20">
-          <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.3em] text-zinc-400 block mb-1">
+          <span className="font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-zinc-400 block mb-1.5">
             HI, I'M BINOJ
           </span>
-          <h1 className="text-3xl sm:text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-none uppercase">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.95] uppercase">
             {ROLES[roleIndex]}
           </h1>
         </div>
 
-        {/* Mobile Turnaround: Precise clipping frame to remove built-in GIF letterbox gaps */}
-        <div className="md:hidden w-full flex items-center justify-center z-10 my-1">
+        {/* Mobile Turnaround: Broad full-width stage, 0 lateral dead zones */}
+        <div className="md:hidden w-full flex items-center justify-center z-10 my-0">
           <div 
-            className="relative w-full max-w-[320px] overflow-hidden flex items-center justify-center"
-            style={{ height: '320px' }}
+            className="relative w-screen max-w-[460px] overflow-hidden flex items-center justify-center"
+            style={{ height: '360px' }}
           >
             <img
               src="/images/me.gif"
               alt="Binoj 360 Turnaround"
               className="w-full h-full object-cover"
               style={{
-                transform: 'scale(1.35)',
-                transformOrigin: '50% 45%'
+                transform: 'scale(1.5)',
+                transformOrigin: '50% 50%'
               }}
               onError={(e) => {
                 e.target.src = "/images/my.png";
@@ -96,13 +96,13 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Bottom: Specialty Scope & CTAs */}
-        <div className="w-full md:max-w-xs flex flex-col items-center md:items-end text-center md:text-right gap-3 flex-shrink-0 z-20">
-          <div className="max-w-xs">
-            <span className="font-mono text-[10px] sm:text-[11px] tracking-widest text-zinc-400 uppercase block mb-1">
+        {/* Bottom: Enlarged Specialty Text & CTAs */}
+        <div className="w-full md:max-w-xs flex flex-col items-center md:items-end text-center md:text-right gap-4 flex-shrink-0 z-20">
+          <div className="max-w-sm px-2">
+            <span className="font-mono text-[11px] sm:text-xs tracking-widest text-zinc-400 uppercase block mb-1">
               {'//'} EXPERTISE SCOPE / SPECIALTY
             </span>
-            <p className="text-xs sm:text-sm font-mono text-zinc-300 leading-snug">
+            <p className="text-sm sm:text-base font-mono text-zinc-200 leading-normal">
               Available for Full-stack Systems, scalable cloud backends, and responsive modern web architectures.
             </p>
           </div>
@@ -111,13 +111,13 @@ export default function Hero() {
             <button
               onClick={handleDownload}
               disabled={isDownloading}
-              className="px-5 py-2.5 rounded-full border border-zinc-700 bg-zinc-900/90 backdrop-blur-md text-xs font-mono text-zinc-200 hover:text-white hover:border-zinc-400 transition-all flex items-center gap-2 shadow-lg active:scale-95"
+              className="px-6 py-2.5 rounded-full border border-zinc-700 bg-zinc-900/90 backdrop-blur-md text-xs sm:text-sm font-mono text-zinc-200 hover:text-white hover:border-zinc-400 transition-all flex items-center gap-2 shadow-lg active:scale-95"
             >
-              <FiDownload size={13} /> {isDownloading ? 'Downloading...' : 'Resume'}
+              <FiDownload size={14} /> {isDownloading ? 'Downloading...' : 'Resume'}
             </button>
             <a
               href="#contact"
-              className="px-5 py-2.5 rounded-full bg-white text-black font-mono text-xs font-semibold hover:bg-zinc-200 transition-all shadow-lg active:scale-95"
+              className="px-6 py-2.5 rounded-full bg-white text-black font-mono text-xs sm:text-sm font-semibold hover:bg-zinc-200 transition-all shadow-lg active:scale-95"
             >
               Contact
             </a>
