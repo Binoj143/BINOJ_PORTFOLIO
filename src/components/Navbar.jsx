@@ -14,7 +14,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'expertise', 'work', 'contact'];
-      const scrollPosition = window.scrollY + 200;
+      const scrollPosition = window.scrollY + 180;
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -36,14 +36,16 @@ export default function Navbar() {
   const handleNavClick = (e, href) => {
     e.preventDefault();
     const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId) || document.getElementById(`${targetId}-anchor`);
+    const target = document.getElementById(targetId);
 
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
       setActiveSection(targetId);
       window.history.pushState(null, '', href);
-    } else {
-      window.location.hash = href;
     }
   };
 
@@ -56,8 +58,8 @@ export default function Navbar() {
             const isActive = activeSection === item.href.slice(1);
             return (
               <li key={item.name}>
-                <a
-                  href={item.href}
+                <button
+                  type="button"
                   onClick={(e) => handleNavClick(e, item.href)}
                   className={`px-3.5 py-1.5 rounded-full font-mono text-xs transition-all duration-200 cursor-pointer select-none ${
                     isActive
@@ -66,21 +68,21 @@ export default function Navbar() {
                   }`}
                 >
                   {item.name}
-                </a>
+                </button>
               </li>
             );
           })}
         </ul>
 
         <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-zinc-800/80">
-          <a
-            href="#contact"
+          <button
+            type="button"
             onClick={(e) => handleNavClick(e, '#contact')}
             className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-800/40 text-emerald-400 font-mono text-[11px] hover:bg-emerald-900/40 transition-colors cursor-pointer"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span>Available For Hire</span>
-          </a>
+          </button>
         </div>
 
       </nav>
