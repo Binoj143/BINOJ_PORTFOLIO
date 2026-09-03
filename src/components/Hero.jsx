@@ -46,28 +46,28 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative min-h-[100svh] w-full bg-[#070709] text-white flex flex-col justify-between pt-24 pb-8 px-6 sm:px-12 lg:px-20 select-none overflow-hidden"
+      className="relative min-h-[100svh] w-full bg-[#070709] text-white flex flex-col justify-between pt-20 sm:pt-24 pb-8 px-5 sm:px-12 lg:px-20 select-none overflow-hidden"
     >
-      {/* Centered Turnaround Layer (Full Face & Head Frame) */}
+      {/* Background 360 Turnaround - Shows Full Hair, Face & Suit Coat */}
       <div className="absolute inset-0 w-full h-full flex items-center justify-center pointer-events-none z-0 overflow-hidden">
-        <div className="relative w-full h-full max-w-lg md:max-w-5xl flex items-center justify-center">
+        <div className="relative w-full h-full max-w-lg md:max-w-6xl flex items-center justify-center">
           <img
             src="/images/me.gif"
             alt="Binoj 360 Turnaround"
-            className="w-full h-[70vh] sm:h-[85vh] object-contain object-center scale-100 sm:scale-110 lg:scale-125 transition-transform duration-500"
+            className="w-auto h-auto max-h-[82vh] sm:max-h-[88vh] max-w-full object-contain object-center scale-95 sm:scale-105 lg:scale-115 transition-transform duration-500"
             onError={(e) => {
               e.target.src = "/images/my.png";
             }}
           />
         </div>
-        {/* Soft edge blend into dark canvas */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-[#070709]/60 pointer-events-none" />
+        {/* Soft edge blend for smooth transitions */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#070709] via-transparent to-[#070709]/50 pointer-events-none" />
       </div>
 
       {/* Floating Foreground Overlay */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 my-auto pointer-events-auto">
         
-        {/* Top / Left Column: Heading & Role */}
+        {/* Left / Top: Greeting & Main Title */}
         <div className="w-full md:max-w-md text-center md:text-left">
           <span className="font-mono text-xs uppercase tracking-[0.3em] text-zinc-400 block mb-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
             HI, I'M BINOJ
@@ -77,7 +77,7 @@ export default function Hero() {
           </h1>
         </div>
 
-        {/* Bottom / Right Column: Specialty Glassmorphism Card & Actions */}
+        {/* Right / Bottom: Specialty Card & Actions */}
         <div className="w-full md:max-w-xs flex flex-col items-center md:items-end text-center md:text-right gap-4 drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)]">
           <div className="p-4 sm:p-0 rounded-2xl sm:rounded-none bg-black/60 sm:bg-transparent backdrop-blur-md sm:backdrop-blur-none border border-white/10 sm:border-transparent max-w-sm">
             <span className="font-mono text-[10px] sm:text-[11px] tracking-widest text-zinc-400 uppercase block mb-1">
