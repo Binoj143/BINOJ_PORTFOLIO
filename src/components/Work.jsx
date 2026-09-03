@@ -27,24 +27,26 @@ const works = [
 
 export default function Work() {
   return (
-    <section id="work" className="py-24 px-6 bg-[#070709] border-t border-zinc-900">
+    <section id="work" className="pt-2 sm:pt-4 pb-14 px-5 sm:px-12 lg:px-20 bg-[#070709] border-t border-zinc-900/50">
       <div className="max-w-5xl mx-auto">
+        
         <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 uppercase tracking-widest mb-2">
-          <span>// FEATURED WORK</span>
+          <span>{'//'} FEATURED WORK</span>
         </div>
-        <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-12">
+        
+        <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-8">
           Featured Engineering Projects
         </h2>
 
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {works.map(({ num, title, desc, stack, link }) => (
             <div
               key={num}
-              className="p-6 sm:p-8 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 hover:bg-zinc-900/50 hover:border-zinc-700 transition-all flex flex-col md:flex-row md:items-center justify-between gap-6"
+              className="p-5 sm:p-8 rounded-2xl border border-zinc-800/80 bg-zinc-900/20 hover:bg-zinc-900/50 hover:border-zinc-700 transition-all flex flex-col md:flex-row md:items-center justify-between gap-6"
             >
               <div className="space-y-3 max-w-2xl">
                 <span className="font-mono text-xs text-zinc-500">
-                  // PROJECT {num}
+                  {'//'} PROJECT {num}
                 </span>
                 <h3 className="text-xl font-bold text-white tracking-tight">
                   {title}
