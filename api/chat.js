@@ -13,7 +13,7 @@ export default async function handler(req, res) {
 
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    return res.status(500).json({ error: 'GEMINI_API_KEY environment variable is not defined.' });
+    return res.status(500).json({ error: 'GEMINI_API_KEY environment variable is not configured.' });
   }
 
   let prompt = req.body?.prompt;
@@ -43,12 +43,12 @@ export default async function handler(req, res) {
 
     const data = await response.json();
     if (!response.ok) {
-      return res.status(response.status).json({ error: data?.error?.message || 'Gemini API Error' });
+      return res.status(response.status).json({ error: data?.error?.message || 'Gemini API call failed' });
     }
 
     const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'No response generated.';
     return res.status(200).json({ text });
   } catch (err) {
-    return res.status(500).json({ error: err.message || 'Server error' });
+    return res.status(500).json({ error: err.message || 'Internal server error' });
   }
 }
