@@ -20,9 +20,8 @@ export default function Skill() {
 // At the top of Skill.jsx:
 <section 
   id="expertise" 
-  className="relative w-full bg-[#070709] text-white pt-2 sm:pt-6 pb-0 px-5 sm:px-12 lg:px-20 select-none overflow-hidden"
->    
-      {/* Section Header */}
+  className="relative w-full bg-[#070709] text-white pt-0 pb-6 px-5 sm:px-12 lg:px-20 select-none overflow-hidden"
+>      {/* Section Header */}
       <div className="max-w-4xl mx-auto text-center mb-8">
         <span className="font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-zinc-400 block mb-2">
           {'//'} TECHNICAL STACK

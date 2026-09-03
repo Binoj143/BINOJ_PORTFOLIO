@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6 bg-[#070709] border-t border-zinc-900 text-left">
-      <div className="max-w-5xl mx-auto">
+// Change this line on the <section id="about" ...> tag:
+<section id="about" className="relative w-full bg-[#070709] text-white pt-16 sm:pt-20 pb-4 sm:pb-6 px-5 sm:px-12 lg:px-20 select-none">      <div className="max-w-5xl mx-auto">
         {/* Code Header Decorator */}
         <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 uppercase tracking-widest mb-6">
           <span>// 0.1</span>
