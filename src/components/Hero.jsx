@@ -75,19 +75,19 @@ export default function Hero() {
           </h1>
         </div>
 
-        {/* Mobile Turnaround: Reduced zoom scale for full hair clearance */}
+        {/* Mobile Turnaround: Lowered scale and anchor for full hair clearance */}
         <div className="md:hidden w-full flex items-center justify-center z-10 my-0">
           <div 
-            className="relative w-screen max-w-[400px] overflow-hidden flex items-center justify-center"
-            style={{ height: '330px' }}
+            className="relative w-screen max-w-[390px] overflow-hidden flex items-center justify-center"
+            style={{ height: '320px' }}
           >
             <img
               src="/images/me.gif"
               alt="Binoj 360 Turnaround"
               className="w-full h-full object-cover"
               style={{
-                transform: 'scale(1.08)',
-                transformOrigin: '50% 35%'
+                transform: 'scale(0.96)',
+                transformOrigin: '50% 28%'
               }}
               onError={(e) => {
                 e.target.src = "/images/my.png";
