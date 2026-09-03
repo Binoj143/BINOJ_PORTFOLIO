@@ -2,12 +2,8 @@ import React from 'react';
 
 export default function About() {
   return (
-// Change this line on the <section id="about" ...> tag:
-<section id="about"
-// On <section id="about" ...> in About.jsx:
-className="relative w-full bg-[#070709] text-white pt-16 pb-0 px-5 sm:px-12 lg:px-20">  
-
-   <div className="max-w-5xl mx-auto">
+    <section id="about" className="relative w-full bg-[#070709] text-white pt-16 pb-0 px-5 sm:px-12 lg:px-20">
+      <div className="max-w-5xl mx-auto">
         {/* Code Header Decorator */}
         <div className="flex items-center gap-2 font-mono text-xs text-zinc-500 uppercase tracking-widest mb-6">
           <span>// 0.1</span>
@@ -28,7 +24,7 @@ className="relative w-full bg-[#070709] text-white pt-16 pb-0 px-5 sm:px-12 lg:p
             </p>
           </div>
 
-          {/* 3 Metric Tiles (Exact Match to Video 0:08) */}
+          {/* 3 Metric Tiles */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 mt-8 border-t border-zinc-900">
             <div className="p-4 rounded-2xl border border-zinc-800/80 bg-zinc-900/30">
               <div className="text-white font-bold text-base tracking-tight">
