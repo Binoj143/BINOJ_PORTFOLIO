@@ -4,11 +4,11 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Expertise', href: '#skills' },    
-    { name: 'Projects', href: '#work' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '#home', id: 'home' },
+    { name: 'About', href: '#about', id: 'about' },
+    { name: 'Expertise', href: '#skills', id: 'skills' },    
+    { name: 'Projects', href: '#work', id: 'work' },
+    { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   useEffect(() => {
@@ -33,17 +33,37 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleScrollTo = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const navOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      setActiveSection(id);
+      window.history.replaceState(null, '', `#${id}`);
+    }
+  };
+
   return (
     <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
       <nav className="pointer-events-auto flex items-center justify-between gap-6 px-6 py-2.5 rounded-full border border-zinc-800/80 bg-zinc-950/80 backdrop-blur-xl shadow-2xl">
         
+        {/* Navigation Links */}
         <ul className="flex items-center gap-1 sm:gap-2">
           {navItems.map((item) => {
-            const isActive = activeSection === item.href.slice(1);
+            const isActive = activeSection === item.id;
             return (
               <li key={item.name}>
                 <a
                   href={item.href}
+                  onClick={(e) => handleScrollTo(e, item.id)}
                   className={`px-3.5 py-1.5 rounded-full font-mono text-xs transition-all duration-200 cursor-pointer select-none ${
                     isActive
                       ? 'bg-zinc-800 text-white font-medium shadow-inner'
@@ -57,10 +77,12 @@ export default function Navbar() {
           })}
         </ul>
 
+        {/* Status Badge */}
         <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-zinc-800/80">
           <a
             href="#contact"
-            className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-800/40 text-emerald-400 font-mono text-[11px] hover:bg-emerald-900/40 transition-colors"
+            onClick={(e) => handleScrollTo(e, 'contact')}
+            className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-800/40 text-emerald-400 font-mono text-[11px] hover:bg-emerald-900/40 transition-colors cursor-pointer"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span>Available For Hire</span>
