@@ -63,7 +63,7 @@ export default function Hero() {
       </div>
 
       {/* Main Structural Flow */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between">
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-1 sm:gap-6">
         
         {/* Top: Name & Animated Role */}
         <div className="w-full md:max-w-md text-center md:text-left flex-shrink-0 z-20">
@@ -75,13 +75,20 @@ export default function Hero() {
           </h1>
         </div>
 
-        {/* Mobile Turnaround: Uncropped Natural Dimensions with Closed Gaps */}
-        <div className="md:hidden w-full flex items-center justify-center -my-6 sm:-my-10 z-10">
-          <div className="relative w-full max-w-[420px] aspect-[16/9] flex items-center justify-center">
+        {/* Mobile Turnaround: Precise clipping frame to remove built-in GIF letterbox gaps */}
+        <div className="md:hidden w-full flex items-center justify-center z-10 my-1">
+          <div 
+            className="relative w-full max-w-[320px] overflow-hidden flex items-center justify-center"
+            style={{ height: '320px' }}
+          >
             <img
               src="/images/me.gif"
               alt="Binoj 360 Turnaround"
-              className="w-full h-full object-contain scale-100"
+              className="w-full h-full object-cover"
+              style={{
+                transform: 'scale(1.35)',
+                transformOrigin: '50% 45%'
+              }}
               onError={(e) => {
                 e.target.src = "/images/my.png";
               }}
