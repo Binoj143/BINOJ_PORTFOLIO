@@ -11,10 +11,10 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-[#09090b] text-zinc-100 flex flex-col selection:bg-zinc-800 selection:text-white">
+    <div className="relative w-full min-h-screen bg-[#09090b] text-zinc-100 selection:bg-zinc-800 selection:text-white">
       <div className="cyber-bg-glow" />
       <Navbar />
-      <main className="flex-1 w-full z-10 flex flex-col">
+      <main className="relative w-full z-10 block">
         <Hero />
         <About />
         <Skill />

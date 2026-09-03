@@ -33,34 +33,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (e, href) => {
-    e.preventDefault();
-    const targetId = href.replace('#', '');
-    const target = document.getElementById(targetId);
-
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest'
-      });
-      setActiveSection(targetId);
-      window.history.pushState(null, '', href);
-    }
-  };
-
   return (
     <header className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none">
       <nav className="pointer-events-auto flex items-center justify-between gap-6 px-6 py-2.5 rounded-full border border-zinc-800/80 bg-zinc-950/80 backdrop-blur-xl shadow-2xl">
         
+        {/* Navigation Links */}
         <ul className="flex items-center gap-1 sm:gap-2">
           {navItems.map((item) => {
             const isActive = activeSection === item.href.slice(1);
             return (
               <li key={item.name}>
-                <button
-                  type="button"
-                  onClick={(e) => handleNavClick(e, item.href)}
+                <a
+                  href={item.href}
                   className={`px-3.5 py-1.5 rounded-full font-mono text-xs transition-all duration-200 cursor-pointer select-none ${
                     isActive
                       ? 'bg-zinc-800 text-white font-medium shadow-inner'
@@ -68,21 +52,21 @@ export default function Navbar() {
                   }`}
                 >
                   {item.name}
-                </button>
+                </a>
               </li>
             );
           })}
         </ul>
 
+        {/* Status Badge */}
         <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-zinc-800/80">
-          <button
-            type="button"
-            onClick={(e) => handleNavClick(e, '#contact')}
-            className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-800/40 text-emerald-400 font-mono text-[11px] hover:bg-emerald-900/40 transition-colors cursor-pointer"
+          <a
+            href="#contact"
+            className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/40 border border-emerald-800/40 text-emerald-400 font-mono text-[11px] hover:bg-emerald-900/40 transition-colors"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span>Available For Hire</span>
-          </button>
+          </a>
         </div>
 
       </nav>

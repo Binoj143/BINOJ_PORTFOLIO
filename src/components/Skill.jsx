@@ -19,10 +19,9 @@ export default function Skill() {
   return (
     <section 
       id="expertise" 
-      style={{ scrollMarginTop: '100px' }}
-      className="relative w-full bg-[#070709] text-white pt-8 pb-14 px-5 sm:px-12 lg:px-20 select-none block"
+      className="relative w-full bg-[#070709] text-white pt-10 pb-16 px-5 sm:px-12 lg:px-20 select-none scroll-mt-24"
     >
-      <div className="max-w-4xl mx-auto text-center mb-8">
+      <div className="max-w-4xl mx-auto text-center mb-10">
         <span className="font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-zinc-400 block mb-2">
           {'//'} TECHNICAL STACK
         </span>
@@ -34,8 +33,7 @@ export default function Skill() {
         </p>
       </div>
 
-      {/* Responsive Skill Groups */}
-      <div className="max-w-5xl mx-auto flex flex-col gap-6">
+      <div className="max-w-5xl mx-auto flex flex-col gap-8">
         {TECH_CATEGORIES.map((group, idx) => (
           <div key={idx} className="flex flex-col items-center">
             
@@ -55,7 +53,7 @@ export default function Skill() {
             </div>
 
             {idx < TECH_CATEGORIES.length - 1 && (
-              <div className="w-20 h-[1px] bg-zinc-800/80 mt-6" />
+              <div className="w-20 h-[1px] bg-zinc-800/80 mt-8" />
             )}
           </div>
         ))}
