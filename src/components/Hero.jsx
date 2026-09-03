@@ -46,9 +46,9 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative h-[100svh] w-full bg-[#070709] text-white flex flex-col justify-between pt-20 pb-4 px-4 sm:px-12 lg:px-20 select-none overflow-hidden"
+      className="relative min-h-[100svh] w-full bg-[#070709] text-white flex flex-col justify-center items-center pt-20 pb-8 px-4 sm:px-12 lg:px-20 select-none overflow-hidden"
     >
-      {/* Desktop Background Turnaround */}
+      {/* Desktop Centered Layer */}
       <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none z-0">
         <div className="relative w-full h-[85vh] max-w-5xl flex items-center justify-center">
           <img
@@ -62,11 +62,11 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Main Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto h-full flex flex-col md:flex-row items-center justify-between">
+      {/* Main Container - Tightly connected stack on mobile */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-1 sm:gap-6">
         
-        {/* Top Writing: Name & Dynamic Title */}
-        <div className="w-full md:max-w-md text-center md:text-left pt-1 flex-shrink-0">
+        {/* Top: Name & Dynamic Title */}
+        <div className="w-full md:max-w-md text-center md:text-left flex-shrink-0 z-20">
           <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.3em] text-zinc-400 block mb-1">
             HI, I'M BINOJ
           </span>
@@ -75,13 +75,13 @@ export default function Hero() {
           </h1>
         </div>
 
-        {/* Mobile Fitted Turnaround: Fills vertical gap between top and bottom text */}
-        <div className="md:hidden w-full flex-1 flex items-center justify-center overflow-hidden my-1">
-          <div className="relative w-full h-full max-h-[50vh] flex items-center justify-center">
+        {/* Mobile Turnaround: Eliminates gaps and crops wide black sides */}
+        <div className="md:hidden w-full flex items-center justify-center overflow-hidden my-0">
+          <div className="relative w-[340px] h-[390px] flex items-center justify-center overflow-hidden">
             <img
               src="/images/me.gif"
               alt="Binoj 360 Turnaround"
-              className="h-full w-auto object-cover scale-[1.75] origin-center"
+              className="w-full h-full object-cover scale-[2.2] translate-y-2 origin-center"
               onError={(e) => {
                 e.target.src = "/images/my.png";
               }}
@@ -89,8 +89,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Bottom Writing: Specialty & Actions */}
-        <div className="w-full md:max-w-xs flex flex-col items-center md:items-end text-center md:text-right gap-3 pb-2 flex-shrink-0">
+        {/* Bottom: Specialty & Actions */}
+        <div className="w-full md:max-w-xs flex flex-col items-center md:items-end text-center md:text-right gap-3 flex-shrink-0 z-20">
           <div className="max-w-xs">
             <span className="font-mono text-[10px] sm:text-[11px] tracking-widest text-zinc-400 uppercase block mb-1">
               {'//'} EXPERTISE SCOPE / SPECIALTY
