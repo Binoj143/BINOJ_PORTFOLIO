@@ -46,9 +46,9 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative h-[100svh] w-full bg-[#070709] text-white flex flex-col justify-between pt-24 pb-6 px-4 sm:px-12 lg:px-20 select-none overflow-hidden"
+      className="relative min-h-[100svh] w-full bg-[#070709] text-white flex flex-col justify-center items-center pt-20 pb-8 px-4 sm:px-12 lg:px-20 select-none overflow-hidden"
     >
-      {/* Desktop Centered Layer */}
+      {/* Desktop Background Layer */}
       <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none z-0">
         <div className="relative w-full h-[85vh] max-w-5xl flex items-center justify-center">
           <img
@@ -62,10 +62,10 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Main Responsive Flow */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto h-full flex flex-col md:flex-row items-center justify-between">
+      {/* Main Structural Flow */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-1 sm:gap-6">
         
-        {/* Top: Name & Headline */}
+        {/* Top: Name & Animated Role */}
         <div className="w-full md:max-w-md text-center md:text-left flex-shrink-0 z-20">
           <span className="font-mono text-[11px] sm:text-xs uppercase tracking-[0.3em] text-zinc-400 block mb-1">
             HI, I'M BINOJ
@@ -75,13 +75,13 @@ export default function Hero() {
           </h1>
         </div>
 
-        {/* Mobile Middle: Dynamically expands to consume vertical gap */}
-        <div className="md:hidden w-full flex-1 flex items-center justify-center overflow-hidden my-1 z-10">
-          <div className="relative w-full h-full max-h-[50vh] flex items-center justify-center">
+        {/* Mobile Turnaround: Eliminates empty padding and snaps directly to text */}
+        <div className="md:hidden w-full flex items-center justify-center my-0 z-10">
+          <div className="relative w-[310px] h-[340px] flex items-center justify-center overflow-hidden">
             <img
               src="/images/me.gif"
               alt="Binoj 360 Turnaround"
-              className="w-full h-full object-contain scale-125 transition-transform duration-300"
+              className="w-full h-full object-cover scale-[1.7] translate-y-1 origin-center"
               onError={(e) => {
                 e.target.src = "/images/my.png";
               }}
@@ -89,8 +89,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Bottom: Specialty Description & Action Buttons */}
-        <div className="w-full md:max-w-xs flex flex-col items-center md:items-end text-center md:text-right gap-3 flex-shrink-0 z-20 pb-1">
+        {/* Bottom: Specialty Scope & CTAs */}
+        <div className="w-full md:max-w-xs flex flex-col items-center md:items-end text-center md:text-right gap-3 flex-shrink-0 z-20">
           <div className="max-w-xs">
             <span className="font-mono text-[10px] sm:text-[11px] tracking-widest text-zinc-400 uppercase block mb-1">
               {'//'} EXPERTISE SCOPE / SPECIALTY
