@@ -65,29 +65,29 @@ export default function Hero() {
       {/* Main Structural Flow */}
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-1 sm:gap-6">
         
-        {/* Top: Larger Name & Animated Headline */}
+        {/* Top: Name & Animated Headline */}
         <div className="w-full md:max-w-md text-center md:text-left flex-shrink-0 z-20">
           <span className="font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-zinc-400 block mb-1.5">
             HI, I'M BINOJ
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.95] uppercase">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-none uppercase">
             {ROLES[roleIndex]}
           </h1>
         </div>
 
-        {/* Mobile Turnaround: Broad full-width stage, 0 lateral dead zones */}
+        {/* Mobile Turnaround: Adjusted scale & anchor to reveal full hair */}
         <div className="md:hidden w-full flex items-center justify-center z-10 my-0">
           <div 
-            className="relative w-screen max-w-[460px] overflow-hidden flex items-center justify-center"
-            style={{ height: '360px' }}
+            className="relative w-screen max-w-[420px] overflow-hidden flex items-center justify-center"
+            style={{ height: '340px' }}
           >
             <img
               src="/images/me.gif"
               alt="Binoj 360 Turnaround"
               className="w-full h-full object-cover"
               style={{
-                transform: 'scale(1.5)',
-                transformOrigin: '50% 50%'
+                transform: 'scale(1.22)',
+                transformOrigin: '50% 40%'
               }}
               onError={(e) => {
                 e.target.src = "/images/my.png";
@@ -96,7 +96,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Bottom: Enlarged Specialty Text & CTAs */}
+        {/* Bottom: Specialty Scope & Actions */}
         <div className="w-full md:max-w-xs flex flex-col items-center md:items-end text-center md:text-right gap-4 flex-shrink-0 z-20">
           <div className="max-w-sm px-2">
             <span className="font-mono text-[11px] sm:text-xs tracking-widest text-zinc-400 uppercase block mb-1">
