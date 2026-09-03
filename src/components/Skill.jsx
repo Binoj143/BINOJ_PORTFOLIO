@@ -17,14 +17,16 @@ const TECH_CATEGORIES = [
 
 export default function Skill() {
   return (
-    <section id="expertise" className="relative w-full bg-[#070709] text-white py-20 px-5 sm:px-12 lg:px-20 select-none overflow-hidden">
-      
-      {/* Section Header */}
-      <div className="max-w-4xl mx-auto text-center mb-14">
-        <span className="font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-zinc-400 block mb-3">
+    <section 
+      id="expertise" 
+      className="relative w-full bg-[#070709] text-white pt-4 sm:pt-8 pb-16 px-5 sm:px-12 lg:px-20 select-none overflow-hidden"
+    >
+      {/* Section Header with reduced top margin */}
+      <div className="max-w-4xl mx-auto text-center mb-10">
+        <span className="font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-zinc-400 block mb-2">
           {'//'} TECHNICAL STACK
         </span>
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight uppercase mb-4">
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight uppercase mb-3">
           Technologies I Work With
         </h2>
         <p className="text-xs sm:text-sm font-mono text-zinc-400 max-w-xl mx-auto leading-relaxed">
@@ -33,12 +35,12 @@ export default function Skill() {
       </div>
 
       {/* Responsive Skill Groups */}
-      <div className="max-w-5xl mx-auto flex flex-col gap-10">
+      <div className="max-w-5xl mx-auto flex flex-col gap-8">
         {TECH_CATEGORIES.map((group, idx) => (
           <div key={idx} className="flex flex-col items-center">
             
             {/* Category Sub-heading */}
-            <span className="font-mono text-[11px] tracking-widest text-zinc-500 uppercase mb-4">
+            <span className="font-mono text-[11px] tracking-widest text-zinc-500 uppercase mb-3">
               {group.category}
             </span>
 
@@ -56,7 +58,7 @@ export default function Skill() {
 
             {/* Divider */}
             {idx < TECH_CATEGORIES.length - 1 && (
-              <div className="w-24 h-[1px] bg-zinc-800/80 mt-10" />
+              <div className="w-20 h-[1px] bg-zinc-800/80 mt-8" />
             )}
           </div>
         ))}
