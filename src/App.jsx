@@ -8,13 +8,14 @@ import Work from './components/Work';
 import Review from './components/Review';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import AiTerminal from './components/AiTerminal';
 
 function App() {
   return (
-    <div className="relative w-full min-h-screen bg-[#09090b] text-zinc-100 selection:bg-zinc-800 selection:text-white">
+    <div className="relative min-h-screen bg-[#09090b] text-zinc-100 flex flex-col selection:bg-zinc-800 selection:text-white">
       <div className="cyber-bg-glow" />
       <Navbar />
-      <main className="relative w-full z-10 block">
+      <main className="flex-1 w-full z-10 flex flex-col">
         <Hero />
         <About />
         <Skill />
@@ -23,6 +24,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <AiTerminal />
     </div>
   );
 }
