@@ -1,53 +1,67 @@
 import React from 'react';
 
-const row1 = [
-  'Python', 'Angular', 'Flask', 'MySQL', 'JavaScript', 'Docker',
-  'Deep Learning', 'PyTorch', 'Git', 'Linux', 'Tailwind CSS'
-];
-
-const row2 = [
-  'REST APIs', 'Computer Vision', 'Machine Learning', 'Network Security',
-  'FortiGate', 'PBX Systems', 'Cloud Deployment', 'SQL Server', 'HTML5', 'TypeScript'
+const TECH_CATEGORIES = [
+  {
+    category: 'PORTFOLIO STACK',
+    skills: ['React 18', 'Vite', 'Tailwind CSS', 'Netlify', 'Git & GitHub', 'JavaScript (ES6+)']
+  },
+  {
+    category: 'FULL-STACK & CLOUD',
+    skills: ['Node.js', 'Express', 'Firebase', 'REST APIs', 'PostgreSQL', 'Docker']
+  },
+  {
+    category: 'SYSTEMS & INFRASTRUCTURE',
+    skills: ['FortiGate', 'Network Security', 'Panasonic PBX', 'Yealink VoIP', 'Linux & Shell', 'NAS Storage']
+  }
 ];
 
 export default function Skill() {
   return (
-    <section id="skills" className="py-24 bg-[#070709] border-t border-zinc-900 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 mb-12 text-center">
-        <span className="font-mono text-xs text-zinc-500 tracking-[0.3em] uppercase block mb-2">
-          // TECHNICAL STACK
+    <section id="expertise" className="relative w-full bg-[#070709] text-white py-20 px-5 sm:px-12 lg:px-20 select-none overflow-hidden">
+      
+      {/* Section Header */}
+      <div className="max-w-4xl mx-auto text-center mb-14">
+        <span className="font-mono text-xs sm:text-sm uppercase tracking-[0.35em] text-zinc-400 block mb-3">
+          {'//'} TECHNICAL STACK
         </span>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight uppercase mb-4">
           Technologies I Work With
         </h2>
-        <p className="font-mono text-xs text-zinc-400 mt-2">
-          Full-stack expertise across modern web development, artificial intelligence, and cloud infrastructure.
+        <p className="text-xs sm:text-sm font-mono text-zinc-400 max-w-xl mx-auto leading-relaxed">
+          Full-stack expertise across modern web architectures, enterprise infrastructure, and cloud deployment pipelines.
         </p>
       </div>
 
-      {/* Marquee Row 1 */}
-      <div className="flex gap-3 whitespace-nowrap overflow-x-auto py-2 no-scrollbar px-6 justify-center">
-        {row1.map((item) => (
-          <span 
-            key={item} 
-            className="px-5 py-2.5 rounded-full border border-zinc-800 bg-zinc-900/60 font-mono text-xs text-zinc-300 hover:border-zinc-500 hover:text-white transition-all shadow-inner"
-          >
-            {item}
-          </span>
+      {/* Responsive Skill Groups */}
+      <div className="max-w-5xl mx-auto flex flex-col gap-10">
+        {TECH_CATEGORIES.map((group, idx) => (
+          <div key={idx} className="flex flex-col items-center">
+            
+            {/* Category Sub-heading */}
+            <span className="font-mono text-[11px] tracking-widest text-zinc-500 uppercase mb-4">
+              {group.category}
+            </span>
+
+            {/* Responsive Auto-Wrapping Pills */}
+            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-3xl">
+              {group.skills.map((skill, sIdx) => (
+                <span
+                  key={sIdx}
+                  className="px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm text-xs sm:text-sm font-mono text-zinc-300 hover:text-white hover:border-zinc-500 hover:bg-zinc-800/80 transition-all duration-200 cursor-default shadow-sm"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+
+            {/* Divider */}
+            {idx < TECH_CATEGORIES.length - 1 && (
+              <div className="w-24 h-[1px] bg-zinc-800/80 mt-10" />
+            )}
+          </div>
         ))}
       </div>
 
-      {/* Marquee Row 2 */}
-      <div className="flex gap-3 whitespace-nowrap overflow-x-auto py-3 no-scrollbar px-6 justify-center mt-2">
-        {row2.map((item) => (
-          <span 
-            key={item} 
-            className="px-5 py-2.5 rounded-full border border-zinc-800 bg-zinc-900/30 font-mono text-xs text-zinc-400 hover:border-zinc-500 hover:text-white transition-all"
-          >
-            {item}
-          </span>
-        ))}
-      </div>
     </section>
   );
 }
