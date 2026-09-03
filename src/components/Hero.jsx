@@ -46,10 +46,10 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen w-full bg-[#070709] text-white flex items-center justify-center px-6 sm:px-12 lg:px-20 overflow-hidden select-none"
+      className="relative min-h-screen w-full bg-[#070709] text-white flex flex-col justify-between pt-24 sm:pt-28 pb-10 px-6 sm:px-12 lg:px-20 select-none overflow-hidden"
     >
-      {/* Centered Turnaround Hero Element */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+      {/* Desktop Centered Layer: hidden on mobile to avoid overlapping */}
+      <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none z-0">
         <div className="relative w-full h-[85vh] max-w-5xl flex items-center justify-center">
           <img
             src="/images/me.gif"
@@ -62,26 +62,40 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Floating Foreground Content Layer */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pointer-events-auto">
-
-        {/* Left Column: Heading & Role */}
-        <div className="max-w-md text-left">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-zinc-400 block mb-3">
+      {/* Main Responsive Grid / Stack */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-center justify-between gap-6 my-auto">
+        
+        {/* Top / Left Column: Heading */}
+        <div className="w-full md:max-w-md text-center md:text-left">
+          <span className="font-mono text-xs uppercase tracking-[0.3em] text-zinc-400 block mb-2 sm:mb-3">
             HI, I'M BINOJ
           </span>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.95] uppercase drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-[0.95] uppercase">
             {ROLES[roleIndex]}
           </h1>
         </div>
 
-        {/* Right Column: Specs & Actions */}
-        <div className="max-w-xs md:text-right flex flex-col md:items-end gap-6 drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
+        {/* Mobile Turnaround Centerpiece: visible only on small screens */}
+        <div className="md:hidden w-full flex items-center justify-center py-2">
+          <div className="relative w-64 h-72 sm:w-80 sm:h-88 flex items-center justify-center">
+            <img
+              src="/images/me.gif"
+              alt="Binoj 360 Turnaround"
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                e.target.src = "/images/my.png";
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Bottom / Right Column: Specs & Actions */}
+        <div className="w-full md:max-w-xs flex flex-col items-center md:items-end text-center md:text-right gap-5">
           <div>
-            <span className="font-mono text-[11px] tracking-widest text-zinc-400 uppercase block mb-1">
+            <span className="font-mono text-[10px] sm:text-[11px] tracking-widest text-zinc-400 uppercase block mb-1">
               {'//'} EXPERTISE SCOPE / SPECIALTY
             </span>
-            <p className="text-xs sm:text-sm font-mono text-zinc-300 leading-relaxed">
+            <p className="text-xs sm:text-sm font-mono text-zinc-300 leading-relaxed max-w-sm md:max-w-none">
               Available for Full-stack Systems, scalable cloud backends, and responsive modern web architectures.
             </p>
           </div>
@@ -90,7 +104,7 @@ export default function Hero() {
             <button
               onClick={handleDownload}
               disabled={isDownloading}
-              className="px-6 py-2.5 rounded-full border border-zinc-700 bg-zinc-900/90 backdrop-blur-md text-xs font-mono text-zinc-200 hover:text-white hover:border-zinc-400 transition-all flex items-center gap-2 shadow-lg"
+              className="px-5 sm:px-6 py-2.5 rounded-full border border-zinc-700 bg-zinc-900/90 backdrop-blur-md text-xs font-mono text-zinc-200 hover:text-white hover:border-zinc-400 transition-all flex items-center gap-2 shadow-lg"
             >
               <FiDownload size={14} /> {isDownloading ? 'Downloading...' : 'Resume'}
             </button>
