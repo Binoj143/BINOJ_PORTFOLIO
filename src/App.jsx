@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,13 +7,13 @@ import Work from './components/Work';
 import Review from './components/Review';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CyberTerminal from './components/CyberTerminal';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-[#09090b] text-zinc-100 flex flex-col selection:bg-zinc-800 selection:text-white">
-      <div className="cyber-bg-glow" />
+    <div className="relative min-h-screen bg-zinc-950 text-zinc-100">
       <Navbar />
-      <main className="flex-1 w-full z-10 flex flex-col">
+      <main>
         <Hero />
         <About />
         <Skill />
@@ -23,8 +22,9 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <CyberTerminal />
     </div>
   );
 }
 
-export default App;
+export default App; // <-- Ensure this line is present at the very end
