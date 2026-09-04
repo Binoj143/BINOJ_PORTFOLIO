@@ -8,7 +8,6 @@ import Work from './components/Work';
 import Review from './components/Review';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import AiTerminal from './components/AiTerminal';
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
         <Contact />
       </main>
       <Footer />
-      <AiTerminal />
     </div>
   );
 }
